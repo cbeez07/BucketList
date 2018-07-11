@@ -51,7 +51,7 @@ app.get('/api/hello', (req, res) => {
 // }
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../client/public/')); // serve the static react app
+  app.use(express.static('../client/')); // serve the static react app
   app.get(/^\/(?!api).*/, (req, res) => { // don't serve api routes to react app
     res.sendFile('index.html', { root: '../client/public/' });
   });
