@@ -1,14 +1,14 @@
 import React from "react";
-import Nav from "../../components/NavBar/NavBar";
-import Cardlist from "../../components/Cardlist/Cardlist";
+import Nav from "../../NavBar/NavBar";
+import Cardlist from "../../Cardlist/Cardlist";
 import {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Row} from 'react-materialize';
 import './Home.css';
 import Axios from "axios";
-import {logoutUser} from '../../actions/authActions';
-import API from '../../utils/API';
+import {logoutUser} from './../../../actions/authActions';
+import API from '../../../utils/API';
 
 class Home extends Component {
     
@@ -27,7 +27,6 @@ class Home extends Component {
         }
     }
     getUserList = (userID) => {
-        console.log(userID);
         Axios.get(`/api/lists/${userID}`)
             .then((res) => {
                 console.log(res.data.items);
